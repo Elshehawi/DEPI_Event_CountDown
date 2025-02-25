@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryVariant">#424242</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <!-- Background Colors -->
+    <color name="colorBackground">#121212</color>
+    <color name="colorSurface">#1E1E1E</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#E0E0E0</color>
+    <color name="colorTextSecondary">#BDBDBD</color>
+
+    <!-- Navigation Bar Colors -->
+    <color name="nav_item_color">#121212</color> <!-- White icons -->
+    <color name="bottom_nav_icon_color">#757575</color> <!-- Light gray text -->
+    <color name="bottom_nav_text_color">#757575</color> <!-- Light gray text -->
+
+
+    <!-- Additional Colors -->
+    <color name="gray">#757575</color>
+    <color name="blue">#90CAF9</color>
+    <color name="blue_dark">#42A5F5</color>
+    <color name="black" tools:ignore="MissingDefaultResource">#FFFFFF</color>
+    <color name="white" tools:ignore="MissingDefaultResource">#000000</color>
+    <color name="blackk" tools:ignore="MissingDefaultResource">#000000</color>
+</resources>
