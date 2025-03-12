@@ -22,10 +22,10 @@ class EventAdapter(private val eventList: List<EventModel>, private val isImport
         holder.time.text = event.eventTime
 
         //  Apply the half-screen width rule ONLY for Important Events
-        if (isImportant) {
-            val screenWidth = Resources.getSystem().displayMetrics.widthPixels
-            holder.itemView.layoutParams.width = (screenWidth * 0.5).toInt()
-        }
+//        if (isImportant) {
+//            val screenWidth = Resources.getSystem().displayMetrics.widthPixels
+//            holder.itemView.layoutParams.width = (screenWidth * 0.5).toInt()
+//        }
     }
 
     override fun getItemCount(): Int = eventList.size
