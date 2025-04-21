@@ -35,10 +35,10 @@
         <EditText
             android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="51dp"
             android:hint="Enter event title"
-            android:textSize="17sp"
-            android:padding="8dp"/>
+            android:padding="8dp"
+            android:textSize="17sp" />
 
         <!-- Event Time -->
         <TextView
@@ -102,6 +102,25 @@
                 android:layout_marginStart="10sp"/>
         </LinearLayout>
 
+<!--        <Switch-->
+<!--            android:id="@+id/checkBoxImportant"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Important Event"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@android:color/holo_blue_dark"-->
+<!--            android:textSize="16sp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+
+        <CheckBox
+            android:id="@+id/checkBoxImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:paddingTop="8dp"
+            android:text="Important Event"
+            android:textSize="16sp" />
+
         <!-- Event Description -->
         <TextView
             android:layout_width="wrap_content"
@@ -110,7 +129,7 @@
             android:textStyle="bold"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="16sp"
-            android:paddingTop="8dp"/>
+            android:paddingTop="15dp"/>
 
         <EditText
             android:id="@+id/editTextDescription"

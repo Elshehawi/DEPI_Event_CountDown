@@ -11,15 +11,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-class AddEventFragment : Fragment() {
 
+
+class AddEventFragment : Fragment() {
     private lateinit var titleEditText: EditText
     private lateinit var timeTextView: TextView
     private lateinit var dateTextView: TextView
     private lateinit var descriptionEditText: EditText
     private lateinit var doneButton: Button
+    private lateinit var importantCheckBox: CheckBox
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +42,7 @@ class AddEventFragment : Fragment() {
         dateTextView = view.findViewById(R.id.textViewDate)
         descriptionEditText = view.findViewById(R.id.editTextDescription)
         doneButton = view.findViewById(R.id.buttonDone)
+        importantCheckBox = view.findViewById(R.id.checkBoxImportant)
 
         timeTextView.setOnClickListener { showTimePicker() }
         dateTextView.setOnClickListener { showDatePicker() }
@@ -84,16 +91,26 @@ class AddEventFragment : Fragment() {
         val time = timeTextView.text.toString()
         val date = dateTextView.text.toString()
         val description = descriptionEditText.text.toString()
+        val isImportant = importantCheckBox.isChecked
 
         if (title.isEmpty() || time.isEmpty() || date.isEmpty()) {
             Toast.makeText(requireContext(), "Please fill in all fields!", Toast.LENGTH_SHORT).show()
             return
         }
 
-        // You can now save the event to a database or send it back to the main list
-        Toast.makeText(requireContext(), "Event Saved: $title", Toast.LENGTH_SHORT).show()
+        val event = EventModel(
+            eventTitle = title,
+            eventDate = date,
+            eventTime = time,
+            eventDescription = description,
+            isImportant = isImportant
+        )
 
-        // Navigate back or perform other actions
-        requireActivity().onBackPressed()
+        lifecycleScope.launch {
+            val db = EventDatabase.getDatabase(requireContext())
+            db.eventDao().insertEvent(event)
+
+            Toast.makeText(requireContext(), "Event Saved!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
