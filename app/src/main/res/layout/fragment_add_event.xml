@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".AddEventFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Close Button -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"
+            android:text="Add Event"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Event Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:hint="Enter event title"
+            android:padding="8dp"
+            android:textSize="17sp" />
+
+        <!-- Event Time -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07:30 PM"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_clock_empty"
+                android:layout_marginStart="25sp"/>
+        </LinearLayout>
+
+        <!-- Event Date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:paddingTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22-02-2025"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_calendar_gray"
+                android:layout_marginStart="10sp"/>
+        </LinearLayout>
+
+<!--        <Switch-->
+<!--            android:id="@+id/checkBoxImportant"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Important Event"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@android:color/holo_blue_dark"-->
+<!--            android:textSize="16sp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            tools:ignore="UseSwitchCompatOrMaterialXml" />-->
+
+        <CheckBox
+            android:id="@+id/checkBoxImportant"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:paddingTop="8dp"
+            android:text="Important Event"
+            android:textSize="16sp" />
+
+        <!-- Event Description -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:paddingTop="15dp"/>
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter event description"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="8dp"/>
+
+        <!-- Done Button -->
+        <Button
+            android:id="@+id/buttonDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textSize="16sp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>
