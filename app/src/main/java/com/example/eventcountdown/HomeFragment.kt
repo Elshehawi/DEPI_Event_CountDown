@@ -17,7 +17,9 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerImportantEvents: RecyclerView
     private lateinit var recyclerUpcomingEvents: RecyclerView
     private lateinit var eventAdapter: EventAdapter
+    private lateinit var importantEventAdapter: EventAdapter
     private var allEvents: List<EventModel> = listOf()
+    private var importantEvents: List<EventModel> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,11 +41,17 @@ class HomeFragment : Fragment() {
         recyclerUpcomingEvents.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        // Setup the upcoming events adapter and recycler view
+        // Setup adapters
         eventAdapter = EventAdapter(allEvents, isImportant = false) { event ->
             openEventDetails(event)
         }
+
+        importantEventAdapter = EventAdapter(importantEvents, isImportant = true) { event ->
+            openEventDetails(event)
+        }
+
         recyclerUpcomingEvents.adapter = eventAdapter
+        recyclerImportantEvents.adapter = importantEventAdapter
 
         // Load data from database
         loadEventsFromDatabase()
@@ -55,11 +63,16 @@ class HomeFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                val filtered = allEvents.filter  {
+                val filteredImportant = importantEvents.filter {
+                    it.eventTitle.contains(newText ?: "", ignoreCase = true)
+                }
+                val filteredUpcoming = allEvents.filter {
                     it.eventTitle.contains(newText ?: "", ignoreCase = true)
                 }
 
-                eventAdapter.updateEvents(filtered)
+                // Update both adapters with filtered data
+                importantEventAdapter.updateEvents(filteredImportant)
+                eventAdapter.updateEvents(filteredUpcoming)
                 return true
             }
         })
@@ -68,7 +81,7 @@ class HomeFragment : Fragment() {
     private fun loadEventsFromDatabase() {
         lifecycleScope.launch {
             val db = EventDatabase.getDatabase(requireContext())
-            val importantEvents = db.eventDao().getImportantEvents()
+            importantEvents = db.eventDao().getImportantEvents()
             allEvents = db.eventDao().getAllEvents()
 
             // Log events to ensure they're being loaded correctly
@@ -77,10 +90,7 @@ class HomeFragment : Fragment() {
             }
 
             // Update the adapter with important events
-            recyclerImportantEvents.adapter =
-                EventAdapter(importantEvents, isImportant = true) { event ->
-                    openEventDetails(event)
-                }
+            importantEventAdapter.updateEvents(importantEvents)
 
             // Update the adapter for upcoming events
             eventAdapter.updateEvents(allEvents)
@@ -99,5 +109,4 @@ class HomeFragment : Fragment() {
             .addToBackStack(null)
             .commit()
     }
-
 }

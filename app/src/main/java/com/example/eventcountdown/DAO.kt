@@ -10,12 +10,15 @@ interface EventDao {
     @Insert
     suspend fun insertEvent(event: EventModel): Long
 
+    @Delete
+    suspend fun deleteEvent(event: EventModel)
+
+    @Query("SELECT * FROM events WHERE id = :eventId LIMIT 1")
+    suspend fun getEventById(eventId: Long): EventModel?
+
     @Query("SELECT * FROM events")
     suspend fun getAllEvents(): List<EventModel>
 
     @Query("SELECT * FROM events WHERE isImportant = 1")
     suspend fun getImportantEvents(): List<EventModel>
-
-    @Delete
-    suspend fun deleteEvent(event: EventModel)
 }

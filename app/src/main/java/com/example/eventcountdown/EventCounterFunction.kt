@@ -1,5 +1,6 @@
 package com.example.eventcountdown
 
+import android.annotation.SuppressLint
 import android.os.CountDownTimer
 import android.widget.TextView
 import java.text.SimpleDateFormat
@@ -27,14 +28,22 @@ class EventCounterFunction(
             val diff = it.time - currentTime
 
             if (diff > 0) {
-                countDownTimer = object : CountDownTimer(diff, 60000) { // update every 1 min
+                countDownTimer = object : CountDownTimer(diff, 1000) { // update every second
+                    @SuppressLint("DefaultLocale")
                     override fun onTick(millisUntilFinished: Long) {
-                        val minutes = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)
-                        textView.text = "Starts in $minutes minutes"
+                        val days = TimeUnit.MILLISECONDS.toDays(millisUntilFinished)
+                        val hours = TimeUnit.MILLISECONDS.toHours(millisUntilFinished) % 24
+                        val minutes = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60
+                        val seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60
+
+                        textView.text = String.format(
+                            "Starts in %02d days %02d hrs %02d min",
+                            days, hours, minutes, seconds
+                        )
                     }
 
                     override fun onFinish() {
-                        textView.text = "Event started"
+                        textView.text = "Event has started!"
                     }
                 }.start()
             } else {

@@ -45,7 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Starts in 120 minutes"
-        android:layout_marginStart="120dp"
+        android:textFontWeight=
+        android:layout_marginStart="90dp"
         android:textSize="14sp"
         android:textStyle="italic"
         android:textColor="#3499F8"
