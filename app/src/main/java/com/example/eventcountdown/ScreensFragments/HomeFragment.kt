@@ -1,5 +1,8 @@
-package com.example.eventcountdown
+package com.example.eventcountdown.ScreensFragments
 
+import com.example.eventcountdown.DataPackage.EventDatabase
+import com.example.eventcountdown.DataPackage.EventModel
+import com.example.eventcountdown.EventProperties.EventAdapter
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.eventcountdown.R
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {

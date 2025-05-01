@@ -1,5 +1,7 @@
-package com.example.eventcountdown
+package com.example.eventcountdown.ScreensFragments
 
+import com.example.eventcountdown.DataPackage.EventDatabase
+import com.example.eventcountdown.DataPackage.EventModel
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -8,8 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.eventcountdown.logic.EventCounterFunction
+import com.example.eventcountdown.R
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -58,6 +63,7 @@ class EventDetailsFragment : Fragment() {
                 lifecycleScope.launch {
                     val db = EventDatabase.getDatabase(requireContext())
                     db.eventDao().deleteEvent(ev)
+                    Toast.makeText(requireContext(), "Event Deleted!", Toast.LENGTH_SHORT).show()
                     Log.d("EventDetailsFragment", "Deleted event with ID: ${ev.id}")
                     parentFragmentManager.popBackStack()
                 }

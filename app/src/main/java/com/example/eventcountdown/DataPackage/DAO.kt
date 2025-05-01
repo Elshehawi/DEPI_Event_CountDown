@@ -1,4 +1,4 @@
-package com.example.eventcountdown
+package com.example.eventcountdown.DataPackage
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -16,9 +16,9 @@ interface EventDao {
     @Query("SELECT * FROM events WHERE id = :eventId LIMIT 1")
     suspend fun getEventById(eventId: Long): EventModel?
 
-    @Query("SELECT * FROM events")
+    @Query("SELECT * FROM events ORDER BY eventDate ASC, eventTime ASC")
     suspend fun getAllEvents(): List<EventModel>
 
-    @Query("SELECT * FROM events WHERE isImportant = 1")
+    @Query("SELECT * FROM events WHERE isImportant = 1 ORDER BY eventDate ASC, eventTime ASC")
     suspend fun getImportantEvents(): List<EventModel>
 }

@@ -1,5 +1,8 @@
 package com.example.eventcountdown
 
+import com.example.eventcountdown.ScreensFragments.AddEventFragment
+import com.example.eventcountdown.ScreensFragments.HomeFragment
+import com.example.eventcountdown.ScreensFragments.ImportantEventsFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView

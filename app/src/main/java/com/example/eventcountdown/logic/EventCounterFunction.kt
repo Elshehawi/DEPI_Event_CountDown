@@ -1,4 +1,4 @@
-package com.example.eventcountdown
+package com.example.eventcountdown.logic
 
 import android.annotation.SuppressLint
 import android.os.CountDownTimer
@@ -21,24 +21,30 @@ class EventCounterFunction(
 
     private fun startCountdown(dateTime: String) {
         val sdf = SimpleDateFormat(dateFormat, Locale.getDefault())
-        val eventDate: Date? = sdf.parse(dateTime)
+        val eventDate: Date?
+        try {
+            eventDate = sdf.parse(dateTime)
+        } catch (e: Exception) {
+            textView.text = "Invalid event time"
+            return
+        }
+
         val currentTime = System.currentTimeMillis()
 
         eventDate?.let {
             val diff = it.time - currentTime
 
             if (diff > 0) {
-                countDownTimer = object : CountDownTimer(diff, 1000) { // update every second
+                countDownTimer = object : CountDownTimer(diff, 60000) {
                     @SuppressLint("DefaultLocale")
                     override fun onTick(millisUntilFinished: Long) {
                         val days = TimeUnit.MILLISECONDS.toDays(millisUntilFinished)
                         val hours = TimeUnit.MILLISECONDS.toHours(millisUntilFinished) % 24
                         val minutes = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60
-                        val seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60
 
                         textView.text = String.format(
                             "Starts in %02d days %02d hrs %02d min",
-                            days, hours, minutes, seconds
+                            days, hours, minutes
                         )
                     }
 
@@ -53,6 +59,7 @@ class EventCounterFunction(
             textView.text = "Invalid event time"
         }
     }
+
 
     fun cancel() {
         countDownTimer?.cancel()
