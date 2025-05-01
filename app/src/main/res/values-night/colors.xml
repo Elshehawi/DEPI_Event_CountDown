@@ -21,7 +21,7 @@
     <!-- Additional Colors -->
     <color name="gray">#757575</color>
     <color name="blue">#90CAF9</color>
-    <color name="blue_dark">#42A5F5</color>
+    <color name="blue_dark" tools:ignore="MissingDefaultResource">#42A5F5</color>
     <color name="black" tools:ignore="MissingDefaultResource">#FFFFFF</color>
     <color name="white" tools:ignore="MissingDefaultResource">#000000</color>
     <color name="blackk" tools:ignore="MissingDefaultResource">#000000</color>

@@ -1,5 +1,7 @@
-package com.example.eventcountdown
+package com.example.eventcountdown.ScreensFragments
 
+import com.example.eventcountdown.DataPackage.EventDatabase
+import com.example.eventcountdown.DataPackage.EventModel
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
@@ -16,6 +18,7 @@ import kotlinx.coroutines.launch
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.eventcountdown.R
 
 
 class AddEventFragment : Fragment() {

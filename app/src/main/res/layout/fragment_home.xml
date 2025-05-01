@@ -7,13 +7,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
+    <SearchView
         android:id="@+id/searchBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search events..."
-        android:drawableStart="@android:drawable/ic_menu_search"
-        android:padding="8dp"/>
+        android:queryHint="Search events..." />
+
 
     <TextView
         android:layout_width="wrap_content"
