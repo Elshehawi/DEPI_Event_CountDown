@@ -31,5 +31,12 @@
         app:itemTextColor="@color/bottom_nav_text_color"
         app:menu="@menu/bottom_navigation_menu"
         app:layout_constraintBottom_toBottomOf="parent" />
+    
+    <FrameLayout
+        android:id="@+id/detailedEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
