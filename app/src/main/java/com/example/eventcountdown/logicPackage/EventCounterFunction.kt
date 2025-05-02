@@ -1,4 +1,4 @@
-package com.example.eventcountdown.logic
+package com.example.eventcountdown.logicPackage
 
 import android.annotation.SuppressLint
 import android.os.CountDownTimer

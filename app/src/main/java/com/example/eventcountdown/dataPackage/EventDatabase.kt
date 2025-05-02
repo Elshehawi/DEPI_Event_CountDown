@@ -1,4 +1,4 @@
-package com.example.eventcountdown.DataPackage
+package com.example.eventcountdown.dataPackage
 
 import android.content.Context
 import androidx.room.Database

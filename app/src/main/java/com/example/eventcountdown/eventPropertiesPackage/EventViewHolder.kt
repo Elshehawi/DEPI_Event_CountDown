@@ -1,4 +1,4 @@
-package com.example.eventcountdown.EventProperties
+package com.example.eventcountdown.eventPropertiesPackage
 
 import android.view.View
 import android.widget.TextView

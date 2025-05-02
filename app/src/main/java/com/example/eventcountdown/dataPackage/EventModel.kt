@@ -1,4 +1,4 @@
-package com.example.eventcountdown.DataPackage
+package com.example.eventcountdown.dataPackage
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

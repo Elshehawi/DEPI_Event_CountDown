@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.example.eventcountdown.logic.EventCounterFunction
+import com.example.eventcountdown.logicPackage.EventCounterFunction
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
