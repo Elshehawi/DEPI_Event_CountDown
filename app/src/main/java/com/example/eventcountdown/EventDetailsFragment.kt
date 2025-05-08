@@ -1,7 +1,5 @@
-package com.example.eventcountdown.ScreensFragments
+package com.example.eventcountdown
 
-import com.example.eventcountdown.DataPackage.EventDatabase
-import com.example.eventcountdown.DataPackage.EventModel
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -13,8 +11,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.eventcountdown.logic.EventCounterFunction
-import com.example.eventcountdown.R
+import com.example.eventcountdown.dataPackage.EventDatabase
+import com.example.eventcountdown.dataPackage.EventModel
+import com.example.eventcountdown.logicPackage.EventCounterFunction
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale

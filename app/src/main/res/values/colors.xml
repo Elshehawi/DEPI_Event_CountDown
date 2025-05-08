@@ -9,7 +9,7 @@
 
     <color name="bottom_nav_icon_color">#757575</color>
     <color name="bottom_nav_text_color">#757575</color>
-    <color name="nav_item_color">#FBFBFB</color>
+
     <!-- Background Colors -->
     <color name="backgroundLight">#F5F5F5</color>
     <color name="backgroundDark">#121212</color>
@@ -22,6 +22,10 @@
 
 
     <!-- Button Colors -->
+    <color name="glassBackground">#40FFFFFF</color> <!-- translucent white -->
+    <color name="neonBlue">#00FFFF</color>
+    <color name="darkBackground">#121212</color>
+    <color name="glassWhite80">#CCFFFFFF</color>
     <color name="red">#D75353</color>
 
 </resources>

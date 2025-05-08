@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Event Count Down</string>
+    <string name="app_name">Evento</string>
     <string name="add_event">Add Event</string>
     <string name="home">Home</string>
     <string name="important">Important</string>

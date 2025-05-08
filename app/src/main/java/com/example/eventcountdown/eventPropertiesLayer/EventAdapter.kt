@@ -1,12 +1,12 @@
-package com.example.eventcountdown.EventProperties
+package com.example.eventcountdown.eventPropertiesLayer
 
-import com.example.eventcountdown.DataPackage.EventModel
 import android.annotation.SuppressLint
 import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventcountdown.R
+import com.example.eventcountdown.dataLayer.EventModel
 
 class EventAdapter(
     private var eventList: List<EventModel>, // Make this mutable

@@ -8,35 +8,36 @@
     android:background="?android:attr/colorBackground"
     tools:context=".MainActivity">
 
-
-
-
-
-    <!-- Fragment Container -->
+    <!-- Main Fragment Container (fills the screen) -->
     <FrameLayout
         android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation - Floating on top -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:itemIconTint="@color/bottom_nav_icon_color"
-        app:itemTextColor="@color/bottom_nav_text_color"
+        android:layout_height="70dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bottom_nav_glass"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/bottom_navigation_menu"
-        app:layout_constraintBottom_toBottomOf="parent" />
-    
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp"
+        android:translationZ="10dp" />
+
+    <!-- Detailed Event Container (Optional, if used for overlays or modals) -->
     <FrameLayout
         android:id="@+id/detailedEvent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        />
-
+        android:layout_marginTop="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,10 +19,17 @@
 
 
     <!-- Additional Colors -->
+    <color name="glassBackground">#40FFFFFF</color> <!-- translucent white -->
+    <color name="neonBlue">#00FFFF</color>
+    <color name="darkBackground">#121212</color>
+    <color name="glassWhite80">#CCFFFFFF</color>
+
     <color name="gray">#757575</color>
     <color name="blue">#90CAF9</color>
+
     <color name="blue_dark" tools:ignore="MissingDefaultResource">#42A5F5</color>
     <color name="black" tools:ignore="MissingDefaultResource">#FFFFFF</color>
     <color name="white" tools:ignore="MissingDefaultResource">#000000</color>
     <color name="blackk" tools:ignore="MissingDefaultResource">#000000</color>
+
 </resources>
