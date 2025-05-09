@@ -10,8 +10,9 @@ Event Countdown is an Android application that allows users to schedule events, 
 * **Event List Display:** View all upcoming events in a structured list.
 
 ## Screenshots
-![Screenshot 2025-05-09 153738](https://github.com/user-attachments/assets/11cb84c4-7305-4d62-a999-967fbce0c0e9)![Screenshot 2025-05-09 153656](https://github.com/user-attachments/assets/d5718dfd-d1e7-4ae2-9cc1-be63ca56a9a0)
-![Screenshot 2025-05-09 153744](https://github.com/user-attachments/assets/50bc7d75-3e6d-4789-bcd8-50218e8a6e75)![Screenshot 2025-05-09 153751](https://github.com/user-attachments/assets/814b1446-9a60-460a-b77a-6c2aefd15195)
+![Screenshot 2025-05-09 153738](https://github.com/user-attachments/assets/11cb84c4-7305-4d62-a999-967fbce0c0e9)   ![Screenshot 2025-05-09 153656](https://github.com/user-attachments/assets/d5718dfd-d1e7-4ae2-9cc1-be63ca56a9a0)
+
+![Screenshot 2025-05-09 153744](https://github.com/user-attachments/assets/50bc7d75-3e6d-4789-bcd8-50218e8a6e75)   ![Screenshot 2025-05-09 153751](https://github.com/user-attachments/assets/814b1446-9a60-460a-b77a-6c2aefd15195)
 
 
 
