@@ -56,30 +56,6 @@ Event Countdown is an Android application that allows users to schedule events, 
 4. The countdown timer will be visible in the event list.
 5. When the event starts, a notification will be triggered automatically.
 
-## Project Structure
-
-```
-📂 app
- ┣ 📂 java/com/example/eventcountdown
- ┃ ┣ 📂 dataLayer
- ┃ ┃ ┣ EventModel.kt
- ┃ ┃ ┣ EventDao.kt
- ┃ ┃ ┗ EventDatabase.kt
- ┃ ┣ AddEventFragment.kt
- ┃ ┣ MainActivity.kt
- ┃ ┣ 📂 LogicLayer
- ┃ ┣ EventCounterFunction.kt
- ┃ ┗ NotificationUtils.kt
- ┣ 📂 res
- ┃ ┣ 📂 layout
- ┃ ┃ ┣ activity_main.xml
- ┃ ┃ ┗ fragment_add_event.xml
- ┃ ┗ 📂 values
- ┃ ┃ ┣ colors.xml
- ┃ ┃ ┗ strings.xml
- ┗ AndroidManifest.xml
-```
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
