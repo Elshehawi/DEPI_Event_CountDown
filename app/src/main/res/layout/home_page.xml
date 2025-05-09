@@ -8,81 +8,36 @@
     android:background="?android:attr/colorBackground"
     tools:context=".MainActivity">
 
-    <!-- Search Bar -->
-    <EditText
-        android:id="@+id/searchBar"
+    <!-- Main Fragment Container (fills the screen) -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:hint="Search events..."
-        android:padding="10dp"
-        android:drawableStart="@drawable/search_bg"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray"
-        android:layout_margin="16dp"
+        android:layout_height="0dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Label: Important Events -->
-    <TextView
-        android:id="@+id/labelImportantEvents"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Important Events"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/searchBar"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Horizontal RecyclerView: Important Events -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerImportantEvents"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="16dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/labelImportantEvents"
-        tools:listitem="@layout/item_event_horizontal" />
-
-    <!-- Label: Upcoming Events -->
-    <TextView
-        android:id="@+id/labelUpcomingEvents"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upcoming Events"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        app:layout_constraintTop_toBottomOf="@id/recyclerImportantEvents"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- Vertical RecyclerView: Upcoming Events -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerUpcomingEvents"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/labelUpcomingEvents"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_event_vertical"/>
-
-
-
-    <!-- Bottom Navigation -->
+    <!-- Bottom Navigation - Floating on top -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bottom_nav_glass"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
         app:menu="@menu/bottom_navigation_menu"
-        android:background="@color/nav_item_color"
-        app:itemIconTint="@color/bottom_nav_icon_color"
-        app:itemTextColor="@color/bottom_nav_text_color"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp"
+        android:translationZ="10dp" />
 
+    <!-- Detailed Event Container (Optional, if used for overlays or modals) -->
+    <FrameLayout
+        android:id="@+id/detailedEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

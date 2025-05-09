@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:itemTextColor="@color/nav_item_color"
+    app:itemIconTint="@color/nav_item_color">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home"
-        android:title="@string/home"
-        />
-
+        android:icon="@drawable/ic_home_selector"
+        android:title="@string/home"/>
     <item
-        android:id="@+id/nav_calendar"
-        android:icon="@drawable/ic_calendar"
+        android:id="@+id/nav_add_event"
+        android:icon="@drawable/ic_calendar_selector"
         android:title="@string/add_event"/>
-
     <item
-        android:id="@+id/nav_favorites"
-        android:icon="@drawable/ic_star_not_selected"
+        android:id="@+id/nav_important"
+        android:icon="@drawable/ic_star_selector"
         android:title="@string/important"/>
-
 </menu>
